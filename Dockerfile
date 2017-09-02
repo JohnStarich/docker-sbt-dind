@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y \
     /apt-clean.sh
 
 # Install latest version of SBT and print version information
-ENV SBT_VERSION 0.13.15
+ARG SBT_VERSION=0.13.15
 RUN mkdir project && \
     echo "sbt.version = $SBT_VERSION" > project/build.properties && \
     sbt sbtVersion && \
